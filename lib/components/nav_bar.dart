@@ -1,15 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/pages/about_us_page.dart';
+import 'package:portfolio_website/pages/home_page.dart';
 
-class NavBar extends StatelessWidget {
-  const NavBar({super.key});
+class NavBar extends StatefulWidget {
+  final bool isHome, isPortfolio, isAboutUs, isGetStarted;
+  const NavBar(
+      {super.key,
+      required this.isHome,
+      required this.isPortfolio,
+      required this.isAboutUs,
+      required this.isGetStarted});
 
+  @override
+  State<NavBar> createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       //layout builder will make the nav bar responsive
       builder: (context, constraints) {
         if (constraints.maxWidth > 800) {
-          return DesktopNavBar();
+          return DesktopNavBar(
+            isHome: widget.isHome,
+            isAboutUs: widget.isAboutUs,
+            isPortfolio: widget.isPortfolio,
+          );
         } else {
           return MobileNavBar();
         }
@@ -19,9 +36,22 @@ class NavBar extends StatelessWidget {
 }
 
 /*             DesktopNavbar                 */
-class DesktopNavBar extends StatelessWidget {
-  const DesktopNavBar({super.key});
+class DesktopNavBar extends StatefulWidget {
+  final bool? isHome, isPortfolio, isAboutUs, isGetStarted;
 
+  DesktopNavBar({
+    super.key,
+    this.isHome,
+    this.isPortfolio,
+    this.isAboutUs,
+    this.isGetStarted,
+  });
+
+  @override
+  State<DesktopNavBar> createState() => _DesktopNavBarState();
+}
+
+class _DesktopNavBarState extends State<DesktopNavBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,15 +72,21 @@ class DesktopNavBar extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  print("home");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
                 },
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: const Text(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
                     "Home",
                     style: TextStyle(
                       color: Colors.white,
+                      fontWeight:
+                          widget.isHome! ? FontWeight.bold : FontWeight.normal,
+                      fontSize: widget.isHome! ? 18 : null,
                     ),
                   ),
                 ),
@@ -60,15 +96,22 @@ class DesktopNavBar extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  print("About us");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AboutUs(),
+                    ),
+                  );
                 },
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: const Text(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
                     "About Us",
                     style: TextStyle(
                       color: Colors.white,
+                      fontWeight: widget.isAboutUs!
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                      fontSize: widget.isAboutUs! ? 18 : null,
                     ),
                   ),
                 ),
@@ -81,12 +124,15 @@ class DesktopNavBar extends StatelessWidget {
                   print("Portfolio");
                 },
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: const Text(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
                     "Portfolio",
                     style: TextStyle(
                       color: Colors.white,
+                      fontWeight: widget.isPortfolio!
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                      fontSize: widget.isPortfolio! ? 18 : null,
                     ),
                   ),
                 ),

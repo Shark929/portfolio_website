@@ -8,8 +8,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final image =
-        AssetImage("assets/images/logo.png", package: 'portfolio_website');
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -21,7 +19,12 @@ class HomePage extends StatelessWidget {
           ),
         ),
         child: Column(children: const [
-          NavBar(),
+          NavBar(
+            isHome: true,
+            isAboutUs: false,
+            isGetStarted: false,
+            isPortfolio: false,
+          ),
           Spacer(),
           Body(),
           Spacer(),
