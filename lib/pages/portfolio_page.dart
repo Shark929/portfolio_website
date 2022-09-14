@@ -26,7 +26,7 @@ class PortFolioPage extends StatelessWidget {
               isGetStarted: false,
               isPortfolio: true,
             ),
-            PortfolioBodyMobile(),
+            PortfolioBody(),
             Footer(),
           ]),
         ),

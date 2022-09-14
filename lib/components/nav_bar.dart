@@ -126,7 +126,11 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
               ),
               InkWell(
                 onTap: () {
-                  print("Portfolio");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const PortFolioPage(),
+                    ),
+                  );
                 },
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 8),
@@ -145,24 +149,24 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
               const SizedBox(
                 width: 30,
               ),
-              InkWell(
-                onTap: () {
-                  print("get started");
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(195, 20, 50, 1.0),
-                      borderRadius: BorderRadius.circular(8)),
-                  child: const Text(
-                    "Get Started",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+              // InkWell(
+              //   onTap: () {
+              //     print("get started");
+              //   },
+              //   child: Container(
+              //     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              //     decoration: BoxDecoration(
+              //         color: Color.fromRGBO(195, 20, 50, 1.0),
+              //         borderRadius: BorderRadius.circular(8)),
+              //     child: const Text(
+              //       "Get Started",
+              //       style: TextStyle(
+              //           color: Colors.white,
+              //           fontSize: 16,
+              //           fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ]),

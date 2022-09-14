@@ -131,27 +131,36 @@ class AboutUsDesktop extends StatelessWidget {
           child: Column(
             //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Testimonials",
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
                     color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: const [
                   TestimodialContainer(
                     isMobile: false,
+                    name: "Choon Kiat",
+                    description:
+                        "We are looking forward for our another collaboration with Amiko Developer Studio",
                   ),
                   TestimodialContainer(
                     isMobile: false,
+                    name: "Lim Ket",
+                    description:
+                        "Amiko Developer Studio is the best Web and Mobile App developer so far",
                   ),
                   TestimodialContainer(
                     isMobile: false,
+                    name: "Ivan Lim",
+                    description:
+                        "Amiko Developer Studio really put their client's priority in the first place!",
                   ),
                 ],
               ),
@@ -248,6 +257,9 @@ class AboutUsMobile extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Image(
                 // width: 400,

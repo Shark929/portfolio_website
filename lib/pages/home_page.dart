@@ -18,19 +18,43 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        child: Column(children: const [
-          NavBar(
-            isHome: true,
-            isAboutUs: false,
-            isGetStarted: false,
-            isPortfolio: false,
-          ),
-          Spacer(),
-          Body(),
-          Spacer(),
-          Footer(),
-        ]),
+        child: SingleChildScrollView(
+          child: Column(children: const [
+            NavBar(
+              isHome: true,
+              isAboutUs: false,
+              isGetStarted: false,
+              isPortfolio: false,
+            ),
+            Body(),
+            Footer(),
+          ]),
+        ),
       ),
     );
+    // return Scaffold(
+    //   body: Container(
+    //     decoration: const BoxDecoration(
+    //       gradient: LinearGradient(
+    //         colors: [
+    //           Color.fromRGBO(195, 20, 50, 1.0),
+    //           Color.fromRGBO(36, 11, 54, 1.0)
+    //         ],
+    //       ),
+    //     ),
+    //     child: Column(children: const [
+    //       NavBar(
+    //         isHome: true,
+    //         isAboutUs: false,
+    //         isGetStarted: false,
+    //         isPortfolio: false,
+    //       ),
+    //       Spacer(),
+    //       Body(),
+    //       Spacer(),
+    //       Footer(),
+    //     ]),
+    //   ),
+    // );
   }
 }
