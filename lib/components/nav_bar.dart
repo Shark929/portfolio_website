@@ -65,12 +65,26 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
         // constraints: BoxConstraints(maxWidth: 1200),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          const Text(
-            "Amiko Developer Studio",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontSize: 30,
+          SizedBox(
+            child: Row(
+              children: [
+                Image.asset(
+                  "assets/amiko.png",
+                  width: 50,
+                  height: 50,
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                const Text(
+                  "Amiko Developer Studio",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
+                ),
+              ],
             ),
           ),
           Row(
@@ -149,24 +163,6 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
               const SizedBox(
                 width: 30,
               ),
-              // InkWell(
-              //   onTap: () {
-              //     print("get started");
-              //   },
-              //   child: Container(
-              //     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-              //     decoration: BoxDecoration(
-              //         color: Color.fromRGBO(195, 20, 50, 1.0),
-              //         borderRadius: BorderRadius.circular(8)),
-              //     child: const Text(
-              //       "Get Started",
-              //       style: TextStyle(
-              //           color: Colors.white,
-              //           fontSize: 16,
-              //           fontWeight: FontWeight.bold),
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ]),
