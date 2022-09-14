@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/pages/about_us_page.dart';
 import 'package:portfolio_website/pages/home_page.dart';
+import 'package:portfolio_website/pages/portfolio_page.dart';
 
 class NavBar extends StatefulWidget {
   final bool isHome, isPortfolio, isAboutUs, isGetStarted;
@@ -28,7 +29,11 @@ class _NavBarState extends State<NavBar> {
             isPortfolio: widget.isPortfolio,
           );
         } else {
-          return MobileNavBar();
+          return MobileNavBar(
+            isHome: widget.isHome,
+            isAboutUs: widget.isAboutUs,
+            isPortfolio: widget.isPortfolio,
+          );
         }
       },
     );
@@ -168,7 +173,12 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
 
 /*             MobileNavbar                 */
 class MobileNavBar extends StatelessWidget {
-  const MobileNavBar({super.key});
+  final bool isHome, isAboutUs, isPortfolio;
+  const MobileNavBar(
+      {super.key,
+      required this.isHome,
+      required this.isAboutUs,
+      required this.isPortfolio});
 
   @override
   Widget build(BuildContext context) {
@@ -176,6 +186,9 @@ class MobileNavBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Container(
         child: Column(children: [
+          const SizedBox(
+            height: 50,
+          ),
           const Text(
             "Amiko Developer Studio",
             style: TextStyle(
@@ -189,28 +202,60 @@ class MobileNavBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Home",
-                  style: TextStyle(
-                    color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Home",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: isHome ? FontWeight.bold : null,
+                      fontSize: isHome ? 16 : null,
+                    ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
-                Text(
-                  "About Us",
-                  style: TextStyle(
-                    color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const AboutUs(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "About Us",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: isAboutUs ? FontWeight.bold : null,
+                      fontSize: isAboutUs ? 16 : null,
+                    ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
-                Text(
-                  "Portfolio",
-                  style: TextStyle(
-                    color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const PortFolioPage()),
+                    );
+                  },
+                  child: Text(
+                    "Portfolio",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: isPortfolio ? FontWeight.bold : null,
+                      fontSize: isPortfolio ? 16 : null,
+                    ),
                   ),
                 ),
               ],

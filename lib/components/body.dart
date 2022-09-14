@@ -75,45 +75,51 @@ class MobileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        const Image(
-          width: 200,
-          height: 200,
-          image: AssetImage("assets/logo.png"),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        const Text(
-          "Web & Mobile App Developer",
-          style: TextStyle(
-              fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        const Text(
-          "We prioritize collaboration with our clients and focus \nto deliver functional and usable products for the society",
-          style: TextStyle(
-              color: Colors.white, fontSize: 16, fontStyle: FontStyle.normal),
-        ),
-        const SizedBox(
-          height: 60,
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(195, 20, 50, 1.0),
-              borderRadius: BorderRadius.circular(8)),
-          child: const Text(
-            "Get Started",
-            style: TextStyle(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          const Image(
+            width: 200,
+            height: 200,
+            image: AssetImage("assets/logo.png"),
           ),
-        ),
-      ],
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "Web & Mobile App Developer",
+            style: TextStyle(
+                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "We prioritize collaboration with our clients and focus to deliver functional and usable products for the society",
+            textAlign: TextAlign.justify,
+            style: TextStyle(
+                color: Colors.white, fontSize: 16, fontStyle: FontStyle.normal),
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(195, 20, 50, 1.0),
+                borderRadius: BorderRadius.circular(8)),
+            child: const Text(
+              "Get Started",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -168,65 +168,64 @@ class AboutUsMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 100,
-        ),
-        const Text(
-          "We Taylor Your Website",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 50,
-            fontWeight: FontWeight.w600,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 80,
           ),
-        ),
-        const Text(
-          "We Develop Your App",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 50,
-            fontWeight: FontWeight.w600,
+          const Text(
+            "We Taylor Your Website",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 100,
-        ),
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: 350,
-          color: Colors.white,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Text(
-                "About Amiko Developer Studio",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 38,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "We thrive on creating values for customers and building trust and transparency between us and clients.",
+          const Text(
+            "We Develop Your App",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(
+            height: 100,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 200,
+            color: Colors.white,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Text(
+                  "About Amiko Developer Studio",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 38,
-                    fontWeight: FontWeight.w400,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    "We thrive on creating values for customers and building trust and transparency between us and clients.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Column(
             children: const [
               SizedBox(
                 height: 50,
@@ -251,56 +250,70 @@ class AboutUsMobile extends StatelessWidget {
                 ),
               ),
               Image(
-                width: 400,
+                // width: 400,
                 height: 320,
                 image: AssetImage("assets/business1.jpg"),
               ),
               Image(
-                width: 400,
+                // width: 400,
                 height: 320,
                 image: AssetImage("assets/business2.jpg"),
               )
             ],
           ),
-        ),
-        Container(
-          color: Colors.white38,
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-          //height: 350,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: [
-              Text(
-                "Testimonials",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TestimodialContainer(
-                isMobile: true,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TestimodialContainer(
-                isMobile: true,
-              ),
-              SizedBox(),
-              SizedBox(
-                height: 10,
-              ),
-              TestimodialContainer(
-                isMobile: true,
-              ),
-              SizedBox(),
-            ],
+          Container(
+            color: Colors.white38,
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            //height: 350,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: const [
+                Text(
+                  "Testimonials",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+                Text(
+                  "What clients talk about us",
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TestimodialContainer(
+                  isMobile: true,
+                  name: "Choon Kiat",
+                  description:
+                      "We are looking forward for our another collaboration with Amiko Developer Studio",
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                TestimodialContainer(
+                  isMobile: true,
+                  name: "Lim Ket",
+                  description:
+                      "Amiko Developer Studio is the best Web and Mobile App developer so far",
+                ),
+                SizedBox(),
+                SizedBox(
+                  height: 10,
+                ),
+                TestimodialContainer(
+                  isMobile: true,
+                  name: "Ivan Lim",
+                  description:
+                      "Amiko Developer Studio really put their client's priority in the first place!",
+                ),
+                SizedBox(),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
